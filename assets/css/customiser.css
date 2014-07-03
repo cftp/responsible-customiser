@@ -1,0 +1,28 @@
+#customize-controls #responsible {
+	background: #fff;
+	padding: 10px 10px 11px 14px;
+}
+
+#customize-controls #responsible ul {
+	margin: 0;
+	text-align: center;
+}
+
+#customize-controls #responsible ul li {
+	margin: 0;
+	display: inline;
+	margin-right: 1em;
+}
+
+#customize-controls #responsible ul li a {
+	color: #000;
+	font-size: 2.5em;
+}
+
+#customize-controls #responsible ul li a.mobile {
+	font-size: 2em;
+}
+
+#customize-controls #responsible ul li a.small-tablet {
+	font-size: 2.2em;
+}
