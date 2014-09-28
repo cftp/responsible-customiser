@@ -103,7 +103,7 @@ class responsible_customiser {
 			'responsible-customiser',
 			plugin_dir_url( __FILE__ ) . 'assets/js/responsible.js',
 			array('jquery', 'jquery-ui-core'),
-			filemtime( plugin_dir_url( __FILE__ ) . 'assets/js/responsible.js' )
+			filemtime( plugin_dir_path( __FILE__ ) . '/assets/js/responsible.js' )
 		);
 
 		// Send the device sizes and HTML as variables to the script for use client-side
@@ -128,7 +128,7 @@ class responsible_customiser {
 			'font-awesome',
 			plugin_dir_url( __FILE__ ) . 'assets/css/font-awesome.min.css',
 			array(),
-			filemtime( plugin_dir_url( __FILE__ ) . 'assets/css/font-awesome.min.css' ),
+			filemtime( plugin_dir_path( __FILE__ ) . '/assets/css/font-awesome.min.css' ),
 			'screen'
 		);
 		wp_enqueue_style('font-awesome');
@@ -138,7 +138,7 @@ class responsible_customiser {
 			'responsible-customiser-css',
 			plugin_dir_url( __FILE__ ) . 'assets/css/customiser.css',
 			array(),
-			filemtime( plugin_dir_url( __FILE__ ) . 'assets/css/customiser.css' ),
+			filemtime( plugin_dir_path( __FILE__ ) . '/assets/css/customiser.css' ),
 			'screen'
 		);
 		wp_enqueue_style('responsible-customiser-css');
