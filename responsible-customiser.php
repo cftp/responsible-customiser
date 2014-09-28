@@ -82,11 +82,13 @@ class responsible_customiser {
 	 * Constructor - registers any hooks.
 	 *
 	 * @since 0.1.0
-	 * @return void
-	 * @author Philip John
+	 * @return \responsible_customiser
 	 */
 	public function __construct() {
+
+		// Queue up the main script that adds the responsive controls
 		add_action( 'customize_controls_enqueue_scripts', array( $this, 'customize_controls_enqueue_scripts' ) );
+
 	}
 
 	/**
@@ -94,7 +96,6 @@ class responsible_customiser {
 	 *
 	 * @since 0.1.0
 	 * @return void
-	 * @author Philip John
 	 */
 	public function customize_controls_enqueue_scripts() {
 
@@ -103,13 +104,13 @@ class responsible_customiser {
 			'responsible-customiser',
 			plugin_dir_url( __FILE__ ) . 'assets/js/responsible.js',
 			array('jquery', 'jquery-ui-core'),
-			filemtime( plugin_dir_path( __FILE__ ) . '/assets/js/responsible.js' )
+			filemtime( plugin_dir_path( __FILE__ ) . '/assets/js/responsible.js' ) // clears caches when modified
 		);
 
 		// Send the device sizes and HTML as variables to the script for use client-side
 		wp_localize_script( 'responsible-customiser', 'responsible', array(
 			'html' => self::customiser_control(),
-			// @todo Filter this:
+			// @todo Filter/configure this:
 			'sizes' => array(
 				'mobile' => array( 'width' => 320, 'height' => 568, 'alt' => 'mobile-landscape' ),
 				'mobile-landscape' => array( 'width' => 568, 'height' => 320, 'alt' => 'mobile' ),
@@ -151,14 +152,12 @@ class responsible_customiser {
 	 * @since 0.1.0
 	 * @access protected
 	 * @return string
-	 * @author Philip John
 	 */
 	protected function customiser_control() {
 
 		/*
 		 * @todo Switch to a filtered array of devices and sizes to construct this
 		 */
-
 		$html = '<div id="responsible">
   <ul>
     <li><a class="responsible-size mobile" href="mobile"><span class="fa fa-mobile"></span></a></li>
