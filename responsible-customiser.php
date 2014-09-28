@@ -3,7 +3,7 @@
 Plugin Name: Responsible Customiser
 Plugin URI: https://github.com/cftp/responsible-customiser
 Description: Viewport resizing comes to the WordPress customiser
-Version: 0.7.0
+Version: 0.7.1
 Author: Code For The People
 Author URI: http://codeforthepeople.com
 Text Domain: responsible-customiser
